@@ -1,9 +1,12 @@
 import mongoose from "mongoose";
+import debug from "debug";
+import config from "config";
+const dbgr = debug("development:mongoose");  //new
 
-mongoose.connect("mongodb://127.0.0.1:27017/scatch").then(() => {
-    console.log("database connected successfully");
+mongoose.connect(`${config.get("MONGOOSE_URI")}/scatch`).then(() => {
+    dbgr("database connected successfully");
 }).catch((err)=>{
-    console.log("Error:  " + err);
+    dbgr("Error:  " + err);
 });
 
 export default mongoose.connection;
