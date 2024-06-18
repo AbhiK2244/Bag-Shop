@@ -54,13 +54,13 @@ Additional Information:
 Preview of the website:
 
 Home Page
-![alt text](preview/image1.png)
+![alt text](Preview/image1.png)
 
 User panel
-![alt text](preview/image2.png)
+![alt text](Preview/image2.png)
 
 Admin panel
-![alt text](preview/image3.png)
+![alt text](Preview/image3.png)
 
 Create Product Page
-![alt text](preview/image4.png)
+![alt text](Preview/image4.png)
