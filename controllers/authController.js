@@ -68,8 +68,8 @@ const loginUser = async (req, res) => {
             })
         }
         else {
-            req.flash("error","User not fount!")
-            return res.status(404).send("User Not Found!");
+            req.flash("error","User not found!")
+            return res.redirect("/");
         }
     } catch(err){
         res.send(err.message);
