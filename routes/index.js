@@ -1,5 +1,6 @@
 import express from "express";
 import isLoggedIn from "../middlewares/isLoggedIn.js";
+import isOwnerLoggedIn from "../middlewares/isOwnerLoggedIn.js";
 import productModel from "../models/product-model.js";
 
 const router = express.Router();
@@ -21,5 +22,10 @@ router.get("/shop", isLoggedIn, async (req, res) => {
 router.get("/logout", isLoggedIn, (req, res) => {
     res.render("shop", {products: []});
 });
+
+router.get("/admin", isOwnerLoggedIn, (req, res) => {
+    let success = req.flash("success");
+  res.render("createproducts", { success });
+})
 
 export default router;
