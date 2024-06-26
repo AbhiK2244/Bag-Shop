@@ -32,7 +32,9 @@ const registerUser = async (req, res) => {
 
                         let token = generateToken(user);
                         res.cookie("token", token); //client ke browser pe cookie set hoga
-                        res.send("user created successfully");
+                        // res.send("user created successfully");
+                        req.flash("error", "User Created Successfully. You can Login!");
+                        res.redirect("/");
                     }
                 })
             }
